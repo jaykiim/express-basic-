@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-develope-environment-setting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.6",
+    "eslint": "^8.6.0",
+    "eslint-plugin-node": "^11.1.0",
+    "prettier": "^2.5.1",
+    "typecript": "0.0.1-security"
+  }
+}
