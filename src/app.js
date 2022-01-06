@@ -9,6 +9,7 @@ const userRouter = require('./routers/user');
 
 app.use('/users', userRouter);
 app.use('/public', express.static('src/public'));
+app.use('/uploads', express.static('uploads'));
 
 // 4개의 인자를 받는 경우에만 에러 핸들링 미들웨어로 취급
 app.use((err, req, res, next) => {

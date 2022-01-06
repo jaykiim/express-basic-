@@ -1,9 +1,13 @@
 const express = require('express');
+const multer = require('multer');
+
+const upload = multer({ dest: 'uploads/' });
+
 const router = express.Router();
 
 const USERS = {
-  15: { nickname: 'foo' },
-  16: { nickname: 'bar' },
+  15: { nickname: 'foo', profileImg: undefined },
+  16: { nickname: 'bar', profileImg: undefined },
 };
 
 router.get('/', (req, res) => {
@@ -34,6 +38,8 @@ router.get('/:id', (req, res) => {
   else if (resMimeType === 'html')
     res.render('user-profile', {
       nickname: req.user.nickname,
+      userId: req.params.id,
+      profileImgURL: `/uploads/${req.user.profileImg}`,
     });
   else res.status(401).send('The requested type is not supported.');
 });
@@ -47,6 +53,11 @@ router.post('/:id/nickname', (req, res) => {
   // req.body: {"nickname": "bar"}
   req.user.nickname = req.body.nickname;
   res.send('User nickname updated');
+});
+
+router.post('/:id/profile', upload.single('profile'), (req, res, next) => {
+  req.user.profileImg = req.file.filename;
+  res.redirect(`/users/${req.params.id}`);
 });
 
 module.exports = router;
