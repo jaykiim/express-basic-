@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -15,10 +15,14 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.0",
     "@types/node": "^17.0.6",
+    "@types/supertest": "^2.0.11",
     "eslint": "^8.6.0",
     "eslint-plugin-node": "^11.1.0",
+    "jest": "^27.4.7",
     "prettier": "^2.5.1",
+    "supertest": "^6.1.6",
     "typecript": "0.0.1-security"
   }
 }
